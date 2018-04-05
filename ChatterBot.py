@@ -2,13 +2,15 @@
 import tweepy
 import time
 import json
-from config import consumer_key, consumer_secret, access_token, access_token_secret
+import os
+from os import environ
 
 # Twitter API Keys
-consumer_key = consumer_key
-consumer_secret = consumer_secret
-access_token = access_token
-access_token_secret = access_token_secret
+consumer_key = os.environ.get('consumer_key')
+consumer_secret = os.environ.get('consumer_secret')
+access_token = os.environ.get('access_token')
+access_token_secret = os.environ.get('access_token_secret')
+api_key = os.environ.get('api_key')
 
 # Setup Tweepy API Authentication
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
